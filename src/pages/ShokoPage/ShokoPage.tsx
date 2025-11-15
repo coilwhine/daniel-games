@@ -26,11 +26,11 @@ const ShokoPage: React.FC<ShokoPageProps> = () => {
     setPlayers(shokoService.getShokoPlayers());
   }
 
-  function updatePlayerName(id: number, name: string, index: number) {
+  function updatePlayerName(id: number, name: string) {
     let newName: string;
 
     if (!name.trim().length) {
-      newName = `שחקן ללא שם ${index + 1}`;
+      newName = `שחקן ללא שם ${id}`;
     } else {
       newName = name.trim();
     }

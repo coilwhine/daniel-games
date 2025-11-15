@@ -15,7 +15,7 @@ class ShokoService {
 
   public addNewPlayer(): void {
     const playerTemplate: ShokoPlayer = {
-      id: this.shokoPlayers.length + 1,
+      id: 1, // TODO: create id identifire here
       name: "",
       balls: [],
     };

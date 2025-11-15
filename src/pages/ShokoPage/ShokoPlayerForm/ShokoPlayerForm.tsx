@@ -13,7 +13,7 @@ interface ShokoPlayerFormProps {
   index: number;
   playerData: ShokoPlayer;
   deletePlayer: (id: number) => void;
-  updatePlayerName: (id: number, name: string, index: number) => void;
+  updatePlayerName: (id: number, name: string) => void;
 }
 
 interface FormData {
@@ -32,7 +32,7 @@ const ShokoPlayerForm: React.FC<ShokoPlayerFormProps> = (
 
   function onSubmit(data: FormData) {
     setEditMode(false);
-    props.updatePlayerName(props.playerData.id, data.playerName, props.index);
+    props.updatePlayerName(props.playerData.id, data.playerName);
   }
 
   return (
