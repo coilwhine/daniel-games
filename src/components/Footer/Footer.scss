@@ -6,6 +6,7 @@
   justify-content: center;
   padding: $spacing-xs;
   background-color: $background-color-secondary;
+  z-index: 1000;
 
   .copyright {
     font-size: $font-size-xs;

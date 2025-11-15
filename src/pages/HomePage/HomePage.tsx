@@ -1,6 +1,6 @@
 import React from "react";
 import "./HomePage.scss";
-import { Link } from "react-router";
+import { Link, NavLink } from "react-router";
 
 interface HomePageProps {}
 
@@ -12,16 +12,22 @@ const HomePage: React.FC<HomePageProps> = () => {
       </header>
       <nav className="game-nav">
         <Link to={"shoko"} className="nav-btn shoko-btn">
-          <span className="heading">שוקו</span>
-          <span className="coming-soon">{"(מגיע בקרוב!)"}</span>
+          <header>
+            <span className="heading">שוקו</span>
+            <span className="coming-soon">{"(מגיע בקרוב!)"}</span>
+          </header>
         </Link>
         <Link to={"thetown"} className="nav-btn the-town-btn">
-          <span className="heading">העיירה</span>
-          <span className="coming-soon">{"(מגיע בקרוב!)"}</span>
+          <header>
+            <span className="heading">העיירה</span>
+            <span className="coming-soon">{"(מגיע בקרוב!)"}</span>
+          </header>
         </Link>
         <Link to={"charades"} className="nav-btn charades-btn">
-          <span className="heading">נימיות</span>
-          <span className="coming-soon">{"(מגיע בקרוב!)"}</span>
+          <header>
+            <span className="heading">נימיות</span>
+            <span className="coming-soon">{"(מגיע בקרוב!)"}</span>
+          </header>
         </Link>
       </nav>
     </div>

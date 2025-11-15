@@ -7,45 +7,60 @@
 
   .game-nav {
     display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: $spacing-md;
+    flex-direction: column;
+    gap: $spacing-sm;
     flex-wrap: wrap;
     padding: $spacing-md;
 
     .nav-btn {
+      position: relative;
+      top: 0;
       flex: 1;
       display: flex;
-      flex-direction: column;
+      justify-content: space-between;
       align-items: center;
-      justify-content: center;
       border-radius: $border-radius-lg;
       color: $text-color-dark;
       padding: $spacing-sm;
-      aspect-ratio: 1;
-      min-width: 7.5rem;
-      max-width: 15rem;
-      text-align: center;
+      transition: 200ms;
 
-      .heading {
-        font-size: $font-size-xxl;
-        font-weight: 700;
-      }
+      header {
+        display: flex;
+        flex-direction: column;
 
-      .coming-soon {
-        color: $text-color-secondary;
+        .heading {
+          font-size: $font-size-xxl;
+          font-weight: 700;
+        }
+
+        .coming-soon {
+          font-size: $font-size-xs;
+          color: $text-color-disabled;
+        }
       }
 
       &.shoko-btn {
-        background-color: $color-primary;
+        background-image: linear-gradient(
+          -65deg,
+          $color-primary calc(100% - 90px),
+          white calc(100% - 87px)
+        );
       }
 
       &.the-town-btn {
-        background-color: $color-secondary;
+        background-image: linear-gradient(
+          -65deg,
+          $color-secondary calc(100% - 90px),
+          white calc(100% - 87px)
+        );
       }
 
       &.charades-btn {
-        background-color: $color-danger;
+        background-image: linear-gradient(
+          -65deg,
+          $color-danger calc(100% - 90px),
+          white calc(100% - 87px)
+        );
       }
     }
   }

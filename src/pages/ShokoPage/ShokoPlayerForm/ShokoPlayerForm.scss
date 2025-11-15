@@ -1,0 +1,57 @@
+.ShokoPlayerForm {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: $spacing-xs;
+
+  .input-wrapper {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    gap: $spacing-xs;
+
+    label {
+      text-wrap: nowrap;
+      font-size: $font-size-lg;
+      font-weight: 700;
+    }
+
+    input,
+    .player-name {
+      width: 100%;
+      font-size: $font-size-lg;
+      padding: $spacing-xs;
+      height: 2.5rem;
+    }
+
+    input {
+      border: none;
+      color: $text-color-dark;
+      border-radius: $border-radius-sm;
+    }
+  }
+
+  .action-menu {
+    display: flex;
+    align-items: center;
+    gap: $spacing-xs;
+
+    button {
+      aspect-ratio: 1;
+      width: 2rem;
+      border-radius: 100%;
+
+      &.edit-btn {
+        background-color: $color-secondary;
+      }
+
+      &.delete-btn {
+        background-color: $color-danger;
+      }
+
+      &.save-btn {
+        background-color: $color-success;
+      }
+    }
+  }
+}

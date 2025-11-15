@@ -1,4 +1,4 @@
-import { createBrowserRouter } from "react-router";
+import { createBrowserRouter, Navigate } from "react-router";
 import App from "../App";
 import ShokoPage from "../pages/ShokoPage/ShokoPage";
 import HomePage from "../pages/HomePage/HomePage";
@@ -17,6 +17,10 @@ const router = createBrowserRouter([
       {
         path: "shoko",
         element: <ShokoPage />,
+      },
+      {
+        path: "*",
+        element: <Navigate to="/" replace />,
       },
     ],
   },

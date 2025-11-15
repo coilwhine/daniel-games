@@ -29,3 +29,15 @@ a {
   color: inherit;
   text-decoration: none;
 }
+
+button {
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+}
+
+input,
+textarea {
+  font-size: $font-size-md;
+  font-family: $font-stack-default;
+}
