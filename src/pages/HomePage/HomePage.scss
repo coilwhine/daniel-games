@@ -1,3 +1,52 @@
 .HomePage {
-    /* Add your styles here */
+  .home-header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .game-nav {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: $spacing-md;
+    flex-wrap: wrap;
+    padding: $spacing-md;
+
+    .nav-btn {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      border-radius: $border-radius-lg;
+      color: $text-color-dark;
+      padding: $spacing-sm;
+      aspect-ratio: 1;
+      min-width: 7.5rem;
+      max-width: 15rem;
+      text-align: center;
+
+      .heading {
+        font-size: $font-size-xxl;
+        font-weight: 700;
+      }
+
+      .coming-soon {
+        color: $text-color-secondary;
+      }
+
+      &.shoko-btn {
+        background-color: $color-primary;
+      }
+
+      &.the-town-btn {
+        background-color: $color-secondary;
+      }
+
+      &.charades-btn {
+        background-color: $color-danger;
+      }
+    }
+  }
 }

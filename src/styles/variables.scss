@@ -1,0 +1,48 @@
+$color-primary: #8ce4ff;
+$color-primary-light: #c0f0ff;
+
+$color-secondary: #feee91;
+$color-secondary-dark: #ffdc00;
+
+$color-highlight: #ffa239;
+$color-highlight-dark: #e48a2d;
+
+$color-danger: #ff5656;
+$color-danger-light: #ff8f8f;
+
+// Background Colors
+$background-color-primary: #1a1d23;
+$background-color-secondary: #282c34;
+
+// Text Colors
+$text-color-primary: #f0f0f0;
+$text-color-secondary: #a9b1bd;
+$text-color-dark: #282c34;
+
+// --- UTILITY VARIABLES ---
+
+// Typography
+$font-stack-default: apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+  Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji",
+  "Segoe UI Symbol";
+
+// Font Size
+$font-size-xs: 0.75rem; // 12px
+$font-size-sm: 0.875rem; // 14px
+$font-size-md: 1rem; // 16px
+$font-size-lg: 1.125rem; // 18px
+$font-size-xl: 1.25rem; // 20px
+$font-size-xxl: 1.5rem; // 24px
+
+// Spacing (Base unit of 1rem/16px)
+$spacing-xxs: 0.25rem; // 4px
+$spacing-xs: 0.5rem; // 8px
+$spacing-sm: 1rem; // 16px
+$spacing-md: 1.5rem; // 24px
+$spacing-lg: 2rem; // 32px
+$spacing-xl: 3rem; // 48px
+
+// Borders & Shadow
+$border-radius-sm: 0.25rem;
+$border-radius-lg: 0.75rem;
+$shadow-default: 0 4px 6px rgba(0, 0, 0, 0.1);

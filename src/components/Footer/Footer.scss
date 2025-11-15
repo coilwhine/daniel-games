@@ -1,3 +1,15 @@
 .Footer {
-    /* Add your styles here */
+  position: sticky;
+  bottom: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: $spacing-xs;
+  background-color: $background-color-secondary;
+
+  .copyright {
+    font-size: $font-size-xs;
+    font-weight: 500;
+    color: $text-color-secondary;
+  }
 }

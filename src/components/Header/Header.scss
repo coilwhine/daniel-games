@@ -1,3 +1,10 @@
 .Header {
-    /* Add your styles here */
+  position: sticky;
+  top: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: $spacing-xs;
+  background-color: $background-color-secondary;
 }
