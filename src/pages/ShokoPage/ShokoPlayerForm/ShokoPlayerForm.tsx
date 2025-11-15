@@ -6,14 +6,14 @@ import {
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import React, { useState } from "react";
 import { useForm } from "react-hook-form";
-import type { Player } from "../models/player.model";
+import type { ShokoPlayer } from "../models/shokoPlayer.model";
 import "./ShokoPlayerForm.scss";
 
 interface ShokoPlayerFormProps {
   index: number;
-  playerData: Player;
+  playerData: ShokoPlayer;
   deletePlayer: (id: number) => void;
-  updatePlayerName: (id: number, name: string) => void;
+  updatePlayerName: (id: number, name: string, index: number) => void;
 }
 
 interface FormData {
@@ -32,7 +32,7 @@ const ShokoPlayerForm: React.FC<ShokoPlayerFormProps> = (
 
   function onSubmit(data: FormData) {
     setEditMode(false);
-    props.updatePlayerName(props.playerData.id, data.playerName);
+    props.updatePlayerName(props.playerData.id, data.playerName, props.index);
   }
 
   return (

@@ -1,4 +1,4 @@
-export interface Player {
+export interface ShokoPlayer {
   id: number;
   name: string;
   balls: number[];
