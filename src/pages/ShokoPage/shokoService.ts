@@ -20,10 +20,9 @@ class ShokoService {
     const shokoGame = localStorage.getItem("shoko_game");
 
     if (shokoGame) {
-      this.shokoPlayers = JSON.parse(shokoGame);
+      this.correntGame = JSON.parse(shokoGame);
     }
 
-    console.log("GMAE", this.correntGame);
     return this.correntGame;
   }
 
@@ -76,7 +75,7 @@ class ShokoService {
       this.correntGame.push(game);
     }
 
-    localStorage.setItem("shoko_game", JSON.stringify(players));
+    localStorage.setItem("shoko_game", JSON.stringify(this.correntGame));
   }
 }
 

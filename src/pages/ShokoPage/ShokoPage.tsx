@@ -17,8 +17,13 @@ const ShokoPage: React.FC<ShokoPageProps> = () => {
   const [isCollapsed, setIsCollapsed] = useState<boolean>(false);
 
   useEffect(() => {
-    const shokoPlayers = shokoService.getShokoPlayers();
-    setPlayers(shokoPlayers);
+    const existingPlayers = shokoService.getShokoPlayers();
+    const existingGame = shokoService.getCorrentgame();
+
+    console.log("EXISTING GAMES", existingGame);
+
+    setPlayers(existingPlayers);
+    setGame(existingGame);
   }, []);
 
   function devideBolls() {
