@@ -4,7 +4,7 @@ import {
   faTrashCan,
 } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { useForm } from "react-hook-form";
 import type { ShokoPlayer } from "../models/shokoPlayer.model";
 import "./ShokoPlayerForm.scss";
@@ -25,6 +25,10 @@ const ShokoPlayerForm: React.FC<ShokoPlayerFormProps> = (
 ) => {
   const { register, handleSubmit } = useForm<FormData>();
   const [editMode, setEditMode] = useState(true);
+
+  useEffect(() => {
+    props.playerData.name ? setEditMode(false) : setEditMode(true);
+  }, []);
 
   function editModeClick() {
     setEditMode(true);
@@ -54,19 +58,24 @@ const ShokoPlayerForm: React.FC<ShokoPlayerFormProps> = (
 
       <div className="action-menu">
         {editMode && (
-          <button type="submit" className="save-btn">
+          <button type="submit" className="btn btn-icon save-btn">
             <FontAwesomeIcon icon={faCircleCheck} />
           </button>
         )}
 
         {!editMode && (
-          <button type="button" className="edit-btn" onClick={editModeClick}>
+          <button
+            type="button"
+            className="btn btn-icon edit-btn"
+            onClick={editModeClick}
+          >
             <FontAwesomeIcon icon={faPenToSquare} />
           </button>
         )}
+
         <button
           type="button"
-          className="delete-btn"
+          className="btn btn-icon delete-btn"
           onClick={() => props.deletePlayer(props.playerData.id)}
         >
           <FontAwesomeIcon icon={faTrashCan} />

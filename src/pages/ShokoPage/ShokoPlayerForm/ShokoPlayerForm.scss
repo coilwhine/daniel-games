@@ -23,12 +23,6 @@
       padding: $spacing-xs;
       height: 2.5rem;
     }
-
-    input {
-      border: none;
-      color: $text-color-dark;
-      border-radius: $border-radius-sm;
-    }
   }
 
   .action-menu {
@@ -36,22 +30,16 @@
     align-items: center;
     gap: $spacing-xs;
 
-    button {
-      aspect-ratio: 1;
-      width: 2rem;
-      border-radius: 100%;
+    .edit-btn {
+      background-color: $color-secondary;
+    }
 
-      &.edit-btn {
-        background-color: $color-secondary;
-      }
+    .delete-btn {
+      background-color: $color-danger;
+    }
 
-      &.delete-btn {
-        background-color: $color-danger;
-      }
-
-      &.save-btn {
-        background-color: $color-success;
-      }
+    .save-btn {
+      background-color: $color-success;
     }
   }
 }

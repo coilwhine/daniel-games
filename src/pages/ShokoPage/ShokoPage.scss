@@ -26,12 +26,10 @@
         font-weight: 700;
       }
 
-      button {
-        aspect-ratio: 1;
+      .add-player-btn {
         width: 3rem;
-        border-radius: 100%;
         font-size: $font-size-lg;
-        background-color: $color-success-light;
+        background-color: $color-success;
       }
     }
   }

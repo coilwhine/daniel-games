@@ -30,7 +30,7 @@ const ShokoPage: React.FC<ShokoPageProps> = () => {
     let newName: string;
 
     if (!name.trim().length) {
-      newName = `שחקן ללא שם`;
+      newName = "שחקן ללא שם";
     } else {
       newName = name.trim();
     }
@@ -52,7 +52,10 @@ const ShokoPage: React.FC<ShokoPageProps> = () => {
       <section className="set-players-section">
         <header className="set-player-header">
           <h3>{`שחקנים (${players.length})`}</h3>
-          <button onClick={addNewPlayer}>
+          <button
+            onClick={addNewPlayer}
+            className="btn btn-icon add-player-btn"
+          >
             <FontAwesomeIcon icon={faPlus} />
           </button>
         </header>

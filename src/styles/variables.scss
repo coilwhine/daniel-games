@@ -1,33 +1,23 @@
-$color-primary: #8ce4ff;
-$color-primary-light: #cef2fd;
-$color-primary-disabled: #b5c1c4;
+$color-primary: #007bff; // Standard Blue
+$color-secondary: #6c757d; // Neutral Grey
+$color-highlight: #ffc107; // Warning/Attention Yellow
+$color-danger: #dc3545; // Red
+$color-success: #28a745; // Green
 
-$color-secondary: #feee91;
-$color-secondary-dark: #ffdc00;
-$color-secondary-disabled: #d4d1b9;
+// Derived Colors (Use for hover/disabled states)
+$color-primary-light: lighten($color-primary, 20%);
+$color-primary-disabled: rgba($color-primary, 0.4);
 
-$color-highlight: #ffa239;
-$color-highlight-dark: #e48a2d;
-$color-highlight-disabled: #d1bda7;
+// Background Colors (Retained the improved dark base)
+$background-color-primary: #0f1115; // Deep Dark Base
+$background-color-secondary: #1e2128; // Elevated Surface (Cards)
+$background-color-light: #f0f0f0; // For light-mode elements
 
-$color-danger: #ff5656;
-$color-danger-light: #ff8f8f;
-$color-danger-disabled: #c49a9a;
-
-$color-success: #22c55e;
-$color-success-light: #86efac;
-$color-success-disabled: #a3c4ab;
-
-// Background Colors
-$background-color-primary: #15171c;
-$background-color-secondary: #201f33;
-$background-color-light: #f3f2f6;
-
-// Text Colors
-$text-color-primary: #f0f0f0;
-$text-color-secondary: #a9b1bd;
-$text-color-disabled: #6a6e74;
-$text-color-dark: #282c34;
+// Text Colors (High Contrast)
+$text-color-primary: #ffffff; // Pure White
+$text-color-secondary: #b0b6c1; // Muted Grey
+$text-color-disabled: #5c616b; // Low-Contrast Grey
+$text-color-dark: #1a1d21; // Very dark text for light backgrounds
 
 // --- UTILITY VARIABLES ---
 
