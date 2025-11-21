@@ -1,71 +1,91 @@
 .ShokoPage {
   display: flex;
   flex-direction: column;
-  gap: 1rem;
+  gap: $spacing-md;
 
-  section {
-    box-shadow: $shadow-md;
+  .header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
   }
 
-  .set-players-section {
-    position: relative;
+  main {
     display: flex;
     flex-direction: column;
-    gap: $spacing-md;
-    padding: $spacing-sm;
-    border-radius: $border-radius-lg;
-    color: $text-color-dark;
-    background-color: $background-color-light;
+    gap: $spacing-xl;
 
-    .set-player-header {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-
-      h3 {
-        font-size: $font-size-xl;
-        font-weight: 700;
-      }
-
-      .add-player-btn {
-        width: 3rem;
-        font-size: $font-size-lg;
-        background-color: $color-success;
-      }
-    }
-
-    .player-forms {
+    section {
+      position: relative;
       display: flex;
       flex-direction: column;
-      gap: $spacing-sm;
-      overflow: auto;
-      max-height: 40vh;
-      transition: 0.4s;
-      padding-bottom: $spacing-lg;
+      gap: $spacing-md;
+      padding: $spacing-sm;
+      border-radius: $border-radius-lg;
+      color: $text-color-dark;
+      background-color: $background-color-light;
+      box-shadow: $light-shadow-md;
+    }
 
-      &::-webkit-scrollbar {
-        width: 0;
-        height: 0;
+    .set-players-section {
+      .set-player-header {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        h3 {
+          font-size: $font-size-xl;
+          font-weight: 700;
+        }
+
+        .add-player-btn {
+          width: 3rem;
+          font-size: $font-size-lg;
+          background-color: $color-success;
+        }
       }
 
-      &.collapsed {
-        padding-bottom: 0;
-        max-height: 0;
+      .player-forms {
+        display: flex;
+        flex-direction: column;
+        gap: $spacing-sm;
+        overflow: auto;
+        max-height: 40vh;
+        transition: 0.4s;
+        padding-bottom: $spacing-lg;
+
+        &::-webkit-scrollbar {
+          width: 0;
+          height: 0;
+        }
+
+        &.collapsed {
+          padding-bottom: 0;
+          max-height: 0;
+        }
+      }
+
+      .collapse-btn {
+        position: absolute;
+        bottom: 0;
+        left: 50%;
+        transform: translate(-50%, +50%);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 3rem;
+        height: 3rem;
+        border-radius: 100rem;
+        background-color: $color-highlight;
       }
     }
 
-    .collapse-btn {
-      position: absolute;
-      bottom: 0;
-      left: 50%;
-      transform: translate(-50%, +50%);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      width: 3rem;
-      height: 3rem;
+    .divide-btn {
+      background-color: $color-success;
+      padding: 1rem;
+      font-size: $font-size-lg;
+      font-weight: 700;
       border-radius: 100rem;
-      background-color: $color-highlight;
     }
   }
 }

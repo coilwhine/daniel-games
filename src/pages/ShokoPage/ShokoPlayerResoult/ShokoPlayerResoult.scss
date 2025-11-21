@@ -1,0 +1,104 @@
+.ShokoPlayerResoult {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  padding: $spacing-sm;
+  border-radius: $border-radius-lg;
+  box-shadow: $dark-shadow-sm;
+  overflow: hidden;
+  cursor: pointer;
+  background-color: white;
+
+  .hide {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 1;
+    transition: opacity 0.3s ease-in-out;
+    background-color: $color-primary;
+    z-index: 1;
+
+    &.exposed {
+      opacity: 0;
+    }
+
+    h1 {
+    }
+  }
+
+  .ball {
+    --ball-color: #ccc; // Default color
+    flex: 1 1 40px;
+    max-width: 60px;
+    aspect-ratio: 1;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    color: white;
+    position: relative;
+    background-color: var(--ball-color);
+    box-shadow: inset -5px -5px 10px rgba(0, 0, 0, 0.5), $dark-shadow-sm;
+
+    &::before {
+      content: "";
+      position: absolute;
+      top: 19.5%;
+      left: 20%;
+      width: 30%;
+      height: 16.5%;
+      background: rgba(255, 255, 255, 0.4);
+      border-radius: 50%;
+      transform: rotate(45deg);
+      filter: blur(4px);
+    }
+
+    &.solid {
+      color: white;
+    }
+
+    &.striped {
+      background: linear-gradient(
+        to bottom,
+        var(--ball-color) 0%,
+        var(--ball-color) 25%,
+        white 25%,
+        white 75%,
+        var(--ball-color) 75%,
+        var(--ball-color) 100%
+      );
+      color: #222;
+    }
+
+    &.yellow {
+      --ball-color: #ffcc00;
+    }
+    &.blue {
+      --ball-color: #0077cc;
+    }
+    &.red {
+      --ball-color: #cc0000;
+    }
+    &.purple {
+      --ball-color: #660099;
+    }
+    &.orange {
+      --ball-color: #ff6600;
+    }
+    &.green {
+      --ball-color: #009933;
+    }
+    &.maroon {
+      --ball-color: #800000;
+    }
+    &.black {
+      --ball-color: #222;
+      color: white;
+    }
+  }
+}

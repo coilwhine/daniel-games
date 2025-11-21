@@ -4,10 +4,6 @@ $color-highlight: #ffc107; // Warning/Attention Yellow
 $color-danger: #dc3545; // Red
 $color-success: #28a745; // Green
 
-// Derived Colors (Use for hover/disabled states)
-$color-primary-light: lighten($color-primary, 20%);
-$color-primary-disabled: rgba($color-primary, 0.4);
-
 // Background Colors (Retained the improved dark base)
 $background-color-primary: #0f1115; // Deep Dark Base
 $background-color-secondary: #1e2128; // Elevated Surface (Cards)
@@ -45,4 +41,9 @@ $spacing-xl: 3rem; // 48px
 // Borders & Shadow
 $border-radius-sm: 0.25rem;
 $border-radius-lg: 0.75rem;
-$shadow-md: 0 4px 6px rgba(0, 0, 0, 0.68);
+
+$dark-shadow-sm: 1px 2px 3px rgba(0, 0, 0, 0.4);
+$dark-shadow-md: 2px 4px 6px rgba(0, 0, 0, 0.5);
+
+$light-shadow-sm: 1px 2px 3px rgba(255, 255, 255, 0.2);
+$light-shadow-md: 2px 4px 6px rgba(255, 255, 255, 0.1);

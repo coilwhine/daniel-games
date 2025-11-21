@@ -1,7 +1,10 @@
+import type { ShokoGamePlayer } from "./models/shokoGame.model";
 import type { ShokoPlayer } from "./models/shokoPlayer.model";
 
 class ShokoService {
   private shokoPlayers: ShokoPlayer[] = [];
+  private correntGame: ShokoGamePlayer[] = [];
+  private gameBalls = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15];
 
   public getShokoPlayers(): ShokoPlayer[] {
     const shokoPlayers = localStorage.getItem("shoko_players");
@@ -13,11 +16,21 @@ class ShokoService {
     return this.shokoPlayers;
   }
 
+  public getCorrentgame(): ShokoGamePlayer[] {
+    const shokoGame = localStorage.getItem("shoko_game");
+
+    if (shokoGame) {
+      this.shokoPlayers = JSON.parse(shokoGame);
+    }
+
+    console.log("GMAE", this.correntGame);
+    return this.correntGame;
+  }
+
   public addNewPlayer(): void {
     const playerTemplate: ShokoPlayer = {
       id: crypto.randomUUID(),
       name: "",
-      balls: [],
     };
 
     this.shokoPlayers = [...this.shokoPlayers, playerTemplate];
@@ -38,6 +51,32 @@ class ShokoService {
     });
 
     localStorage.setItem("shoko_players", JSON.stringify(this.shokoPlayers));
+  }
+
+  public divideToPlayers() {
+    const gameBalls = [...this.gameBalls].sort(() => Math.random() - 0.5);
+    const players = this.getShokoPlayers();
+    const numberOfBollsForPlayers = Math.floor(
+      gameBalls.length / players.length
+    );
+
+    this.correntGame = [];
+
+    for (let i = 0; i < players.length; i++) {
+      const sortedBoals = gameBalls
+        .splice(0, numberOfBollsForPlayers)
+        .sort((a, b) => a - b);
+
+      const game: ShokoGamePlayer = {
+        playerId: players[i].id,
+        playerName: players[i].name,
+        balls: sortedBoals,
+      };
+
+      this.correntGame.push(game);
+    }
+
+    localStorage.setItem("shoko_game", JSON.stringify(players));
   }
 }
 

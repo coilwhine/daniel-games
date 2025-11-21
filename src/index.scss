@@ -55,6 +55,7 @@ textarea {
   position: relative;
   top: 0;
   transition: 150ms;
+  box-shadow: $dark-shadow-sm;
 
   &:active {
     top: 3px;
