@@ -1,6 +1,6 @@
 import React from "react";
+import { Link } from "react-router";
 import "./HomePage.scss";
-import { Link, NavLink } from "react-router";
 
 interface HomePageProps {}
 
