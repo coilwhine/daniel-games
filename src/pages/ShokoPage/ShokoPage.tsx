@@ -43,14 +43,8 @@ const ShokoPage: React.FC<ShokoPageProps> = () => {
   }
 
   function toogleCollapse(state: boolean = !isCollapsed) {
-    console.log("state", state);
-
     setIsCollapsed(state);
   }
-
-  useEffect(() => {
-    console.log("players", players);
-  }, [players]);
 
   return (
     <div className="ShokoPage">
