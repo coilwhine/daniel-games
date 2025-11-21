@@ -11,7 +11,7 @@ interface ShokoPageProps {}
 
 const ShokoPage: React.FC<ShokoPageProps> = () => {
   const [players, setPlayers] = useState<ShokoPlayer[]>([]);
-  const [isCollapsed, setIsCollapsed] = useState<boolean>(true);
+  const [isCollapsed, setIsCollapsed] = useState<boolean>(false);
 
   useEffect(() => {
     const shokoPlayers = shokoService.getShokoPlayers();
