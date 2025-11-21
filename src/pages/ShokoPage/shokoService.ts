@@ -15,7 +15,7 @@ class ShokoService {
 
   public addNewPlayer(): void {
     const playerTemplate: ShokoPlayer = {
-      id: 1, // TODO: create id identifire here
+      id: crypto.randomUUID(),
       name: "",
       balls: [],
     };
@@ -24,12 +24,12 @@ class ShokoService {
     localStorage.setItem("shoko_players", JSON.stringify(this.shokoPlayers));
   }
 
-  public deletePlayer(id: number): void {
+  public deletePlayer(id: string): void {
     this.shokoPlayers = this.shokoPlayers.filter((player) => player.id !== id);
     localStorage.setItem("shoko_players", JSON.stringify(this.shokoPlayers));
   }
 
-  public updatePlayerName(id: number, newName: string): void {
+  public updatePlayerName(id: string, newName: string): void {
     this.shokoPlayers = this.shokoPlayers.map((player) => {
       if (player.id === id) {
         return { ...player, name: newName };

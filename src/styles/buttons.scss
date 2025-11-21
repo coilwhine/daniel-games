@@ -1,0 +1,9 @@
+.btn {
+  position: relative;
+  top: 0;
+  transition: 150ms;
+
+  &:active {
+    top: 3px;
+  }
+}

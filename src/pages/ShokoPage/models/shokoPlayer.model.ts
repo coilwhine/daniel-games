@@ -1,5 +1,5 @@
 export interface ShokoPlayer {
-  id: number;
+  id: string;
   name: string;
   balls: number[];
 }

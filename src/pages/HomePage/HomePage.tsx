@@ -11,19 +11,19 @@ const HomePage: React.FC<HomePageProps> = () => {
         <h2>מה משחקים?</h2>
       </header>
       <nav className="game-nav">
-        <Link to={"shoko"} className="nav-btn shoko-btn">
+        <Link to={"shoko"} className="btn nav-btn shoko-btn">
           <header>
             <span className="heading">שוקו</span>
             <span className="coming-soon">{"(מגיע בקרוב!)"}</span>
           </header>
         </Link>
-        <Link to={"thetown"} className="nav-btn the-town-btn">
+        <Link to={"thetown"} className="btn nav-btn the-town-btn">
           <header>
             <span className="heading">העיירה</span>
             <span className="coming-soon">{"(מגיע בקרוב!)"}</span>
           </header>
         </Link>
-        <Link to={"charades"} className="nav-btn charades-btn">
+        <Link to={"charades"} className="btn nav-btn charades-btn">
           <header>
             <span className="heading">נימיות</span>
             <span className="coming-soon">{"(מגיע בקרוב!)"}</span>

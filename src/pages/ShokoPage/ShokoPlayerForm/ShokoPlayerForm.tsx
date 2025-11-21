@@ -12,8 +12,8 @@ import "./ShokoPlayerForm.scss";
 interface ShokoPlayerFormProps {
   index: number;
   playerData: ShokoPlayer;
-  deletePlayer: (id: number) => void;
-  updatePlayerName: (id: number, name: string) => void;
+  deletePlayer: (id: string) => void;
+  updatePlayerName: (id: string, name: string) => void;
 }
 
 interface FormData {

@@ -13,8 +13,6 @@
     padding: $spacing-md;
 
     .nav-btn {
-      position: relative;
-      top: 0;
       flex: 1;
       display: flex;
       justify-content: space-between;
@@ -22,7 +20,6 @@
       border-radius: $border-radius-lg;
       color: $text-color-dark;
       padding: $spacing-sm;
-      transition: 200ms;
 
       header {
         display: flex;

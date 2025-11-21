@@ -4,7 +4,7 @@ import type { ShokoPlayer } from "./models/shokoPlayer.model";
 import ShokoPlayerForm from "./ShokoPlayerForm/ShokoPlayerForm";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faPlus } from "@fortawesome/free-solid-svg-icons";
-import shokoService from "./shoko.service";
+import shokoService from "./shokoService";
 
 interface ShokoPageProps {}
 
@@ -21,16 +21,16 @@ const ShokoPage: React.FC<ShokoPageProps> = () => {
     setPlayers(shokoService.getShokoPlayers());
   }
 
-  function deletePlayer(id: number) {
+  function deletePlayer(id: string) {
     shokoService.deletePlayer(id);
     setPlayers(shokoService.getShokoPlayers());
   }
 
-  function updatePlayerName(id: number, name: string) {
+  function updatePlayerName(id: string, name: string) {
     let newName: string;
 
     if (!name.trim().length) {
-      newName = `שחקן ללא שם ${id}`;
+      newName = `שחקן ללא שם`;
     } else {
       newName = name.trim();
     }
