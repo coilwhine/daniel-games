@@ -8,6 +8,7 @@
   }
 
   .set-players-section {
+    position: relative;
     display: flex;
     flex-direction: column;
     gap: $spacing-md;
@@ -31,6 +32,35 @@
         font-size: $font-size-lg;
         background-color: $color-success;
       }
+    }
+
+    .player-forms {
+      display: flex;
+      flex-direction: column;
+      gap: $spacing-sm;
+      overflow: hidden;
+      max-height: 40vh;
+      transition: 0.4s;
+      padding-bottom: $spacing-lg;
+
+      &.collapsed {
+        padding-bottom: 0;
+        max-height: 0;
+      }
+    }
+
+    .collapse-btn {
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      transform: translate(-50%, +50%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 3rem;
+      height: 3rem;
+      border-radius: 100rem;
+      background-color: $color-highlight;
     }
   }
 }

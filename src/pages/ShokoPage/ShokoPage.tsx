@@ -1,15 +1,17 @@
-import React, { useEffect, useState } from "react";
-import "./ShokoPage.scss";
-import type { ShokoPlayer } from "./models/shokoPlayer.model";
-import ShokoPlayerForm from "./ShokoPlayerForm/ShokoPlayerForm";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faPlus } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import React, { useEffect, useState } from "react";
+import { BiCollapseVertical } from "react-icons/bi";
+import type { ShokoPlayer } from "./models/shokoPlayer.model";
+import "./ShokoPage.scss";
+import ShokoPlayerForm from "./ShokoPlayerForm/ShokoPlayerForm";
 import shokoService from "./shokoService";
 
 interface ShokoPageProps {}
 
 const ShokoPage: React.FC<ShokoPageProps> = () => {
   const [players, setPlayers] = useState<ShokoPlayer[]>([]);
+  const [isCollapsed, setIsCollapsed] = useState<boolean>(true);
 
   useEffect(() => {
     const shokoPlayers = shokoService.getShokoPlayers();
@@ -17,6 +19,7 @@ const ShokoPage: React.FC<ShokoPageProps> = () => {
   }, []);
 
   function addNewPlayer() {
+    toogleCollapse(false);
     shokoService.addNewPlayer();
     setPlayers(shokoService.getShokoPlayers());
   }
@@ -39,6 +42,12 @@ const ShokoPage: React.FC<ShokoPageProps> = () => {
     setPlayers(shokoService.getShokoPlayers());
   }
 
+  function toogleCollapse(state: boolean = !isCollapsed) {
+    console.log("state", state);
+
+    setIsCollapsed(state);
+  }
+
   useEffect(() => {
     console.log("players", players);
   }, [players]);
@@ -59,17 +68,26 @@ const ShokoPage: React.FC<ShokoPageProps> = () => {
             <FontAwesomeIcon icon={faPlus} />
           </button>
         </header>
-        {players.map((player, index) => {
-          return (
-            <ShokoPlayerForm
-              key={player.id}
-              index={index}
-              playerData={player}
-              deletePlayer={deletePlayer}
-              updatePlayerName={updatePlayerName}
-            />
-          );
-        })}
+
+        {players.length !== 0 && (
+          <div className={`player-forms ${isCollapsed && "collapsed"}`}>
+            {players.map((player, index) => {
+              return (
+                <ShokoPlayerForm
+                  key={player.id}
+                  index={index}
+                  playerData={player}
+                  deletePlayer={deletePlayer}
+                  updatePlayerName={updatePlayerName}
+                />
+              );
+            })}
+          </div>
+        )}
+
+        <button className="collapse-btn" onClick={() => toogleCollapse()}>
+          <BiCollapseVertical />
+        </button>
       </section>
     </div>
   );

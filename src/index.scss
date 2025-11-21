@@ -72,8 +72,12 @@ textarea {
 input,
 textarea,
 select {
+  box-shadow: 0 0 0 0 rgba($color-primary, 0) inset;
+  transition: 150ms;
+
   &:focus {
-    outline: 2px solid $color-primary;
+    outline: none;
+    box-shadow: 0 0 0 3px rgba($color-primary, 0.3) inset;
   }
 }
 
