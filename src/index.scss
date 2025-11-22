@@ -57,7 +57,12 @@ textarea {
   transition: 150ms;
   box-shadow: $dark-shadow-sm;
 
-  &:active {
+  &:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+  }
+
+  &:not(:disabled):active {
     top: 3px;
   }
 

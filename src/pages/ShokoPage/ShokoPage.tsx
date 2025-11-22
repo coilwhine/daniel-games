@@ -18,17 +18,15 @@ const ShokoPage: React.FC<ShokoPageProps> = () => {
 
   useEffect(() => {
     const existingPlayers = shokoService.getShokoPlayers();
-    const existingGame = shokoService.getCorrentgame();
-
-    console.log("EXISTING GAMES", existingGame);
+    const existingGame = shokoService.getCorrentGame(); //
 
     setPlayers(existingPlayers);
     setGame(existingGame);
   }, []);
 
-  function devideBolls() {
+  function divideBolls() {
     shokoService.divideToPlayers();
-    const game = shokoService.getCorrentgame();
+    const game = shokoService.getCorrentGame();
     setGame(game);
   }
 
@@ -36,11 +34,17 @@ const ShokoPage: React.FC<ShokoPageProps> = () => {
     toogleCollapse(false);
     shokoService.addNewPlayer();
     setPlayers(shokoService.getShokoPlayers());
+
+    const existingGame = shokoService.getCorrentGame();
+    setGame(existingGame);
   }
 
   function deletePlayer(id: string) {
     shokoService.deletePlayer(id);
     setPlayers(shokoService.getShokoPlayers());
+
+    const existingGame = shokoService.getCorrentGame();
+    setGame(existingGame);
   }
 
   function updatePlayerName(id: string, name: string) {
@@ -54,10 +58,13 @@ const ShokoPage: React.FC<ShokoPageProps> = () => {
 
     shokoService.updatePlayerName(id, newName);
     setPlayers(shokoService.getShokoPlayers());
+
+    const existingGame = shokoService.getCorrentGame();
+    setGame(existingGame);
   }
 
-  function toogleCollapse(state: boolean = !isCollapsed) {
-    setIsCollapsed(state);
+  function toogleCollapse(state?: boolean) {
+    setIsCollapsed((prevState) => state ?? !prevState);
   }
 
   return (
@@ -94,21 +101,29 @@ const ShokoPage: React.FC<ShokoPageProps> = () => {
             </div>
           )}
 
-          <button className="collapse-btn" onClick={() => toogleCollapse()}>
-            <BiCollapseVertical />
-          </button>
+          {players.length > 0 && (
+            <button className="collapse-btn" onClick={() => toogleCollapse()}>
+              <BiCollapseVertical />
+            </button>
+          )}
         </section>
 
         <section className="resoult-section">
-          <button className="btn divide-btn" onClick={() => devideBolls()}>
+          <button
+            className="btn divide-btn"
+            onClick={() => divideBolls()}
+            disabled={players.length === 0}
+          >
             חלוקה
           </button>
-          <h3>והתוצאות הם:</h3>
-          {game.map((game) => {
-            return (
-              <ShokoPlayerResoult key={game.playerId} gamePlayerData={game} />
-            );
-          })}
+          {game.length > 0 && (
+            <>
+              <h3>והתוצאות הם:</h3>
+              {game.map((game) => (
+                <ShokoPlayerResoult key={game.playerId} gamePlayerData={game} />
+              ))}
+            </>
+          )}
         </section>
       </main>
     </div>

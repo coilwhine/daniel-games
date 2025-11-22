@@ -16,7 +16,7 @@ class ShokoService {
     return this.shokoPlayers;
   }
 
-  public getCorrentgame(): ShokoGamePlayer[] {
+  public getCorrentGame(): ShokoGamePlayer[] {
     const shokoGame = localStorage.getItem("shoko_game");
 
     if (shokoGame) {
@@ -34,11 +34,13 @@ class ShokoService {
 
     this.shokoPlayers = [...this.shokoPlayers, playerTemplate];
     localStorage.setItem("shoko_players", JSON.stringify(this.shokoPlayers));
+    this.resetGame();
   }
 
   public deletePlayer(id: string): void {
     this.shokoPlayers = this.shokoPlayers.filter((player) => player.id !== id);
     localStorage.setItem("shoko_players", JSON.stringify(this.shokoPlayers));
+    this.resetGame();
   }
 
   public updatePlayerName(id: string, newName: string): void {
@@ -50,6 +52,7 @@ class ShokoService {
     });
 
     localStorage.setItem("shoko_players", JSON.stringify(this.shokoPlayers));
+    this.resetGame();
   }
 
   public divideToPlayers() {
@@ -76,6 +79,11 @@ class ShokoService {
     }
 
     localStorage.setItem("shoko_game", JSON.stringify(this.correntGame));
+  }
+
+  public resetGame() {
+    this.correntGame = [];
+    localStorage.removeItem("shoko_game");
   }
 }
 
